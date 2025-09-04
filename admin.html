@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Panel</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-dark text-light">
+<div class="container my-5">
+  <h1>Edit Website Content</h1>
+  <hr>
+
+  <h3>Profil</h3>
+  <label>Judul Profil</label>
+  <input id="profileTitle" class="form-control mb-2" />
+  <label>Deskripsi Profil</label>
+  <textarea id="profileDesc" class="form-control mb-4"></textarea>
+
+  <h3>Projects</h3>
+  <div id="projectsList"></div>
+  <button id="addProjectBtn" class="btn btn-success mb-3">Tambah Project</button>
+
+  <h3>Contact</h3>
+  <label>Email</label>
+  <input id="contactEmail" class="form-control mb-2" />
+  <label>WhatsApp</label>
+  <input id="contactWA" class="form-control mb-4" />
+
+  <button id="saveBtn" class="btn btn-primary btn-lg">Simpan Semua</button>
+</div>
+
+<script>
+  // Load data dari localStorage
+  function loadData() {
+    const data = JSON.parse(localStorage.getItem('portfolioData')) || {
+      profileTitle: 'I Am Web Developer',
+      profileDesc: 'Saya adalah seorang Web Developer dengan pengalaman...',
+      // profileSocial dihapus karena gak dipakai lagi
+      projects: [
+        {title:'Aplikasi Pemesanan', desc:'Aplikasi pemesanan cafe elkusa...', img:'assets/image/aplikasi.png'},
+        {title:'WebMI', desc:"WebMI adalah website resmi dari lembaga MI...", img:'assets/image/webmi.png'},
+        {title:'Kedai Kopi', desc:'Kedai Kopi adalah website promosi kopi online...', img:'assets/image/kedaikopi.png'}
+      ],
+      contactEmail: 'johndoe@gmail.com',
+      contactWA: '+62 812-3456-7890'
+    };
+    return data;
+  }
+
+  // Simpan data ke localStorage
+  function saveData(data) {
+    localStorage.setItem('portfolioData', JSON.stringify(data));
+  }
+
+  // Render projects input form
+  function renderProjects(projects) {
+    const container = document.getElementById('projectsList');
+    container.innerHTML = '';
+    projects.forEach((p, i) => {
+      const div = document.createElement('div');
+      div.classList.add('mb-3', 'border', 'p-3', 'rounded', 'bg-secondary');
+      div.innerHTML = `
+        <label>Judul Project</label>
+        <input type="text" class="form-control mb-1 project-title" data-index="${i}" value="${p.title}" />
+        <label>Deskripsi Project</label>
+        <textarea class="form-control mb-1 project-desc" data-index="${i}">${p.desc}</textarea>
+        <label>URL/Gambar Project</label>
+        <input type="text" class="form-control mb-1 project-img" data-index="${i}" value="${p.img}" />
+        <button class="btn btn-danger btn-sm remove-project" data-index="${i}">Hapus</button>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  // Inisialisasi halaman
+  let data = loadData();
+  document.getElementById('profileTitle').value = data.profileTitle;
+  document.getElementById('profileDesc').value = data.profileDesc;
+  // profileSocial dihapus dari sini juga
+  document.getElementById('contactEmail').value = data.contactEmail;
+  document.getElementById('contactWA').value = data.contactWA;
+  renderProjects(data.projects);
+
+  // Tambah project baru
+  document.getElementById('addProjectBtn').addEventListener('click', () => {
+    data.projects.push({title:'', desc:'', img:''});
+    renderProjects(data.projects);
+  });
+
+  // Hapus project
+  document.getElementById('projectsList').addEventListener('click', (e) => {
+    if(e.target.classList.contains('remove-project')){
+      const i = e.target.dataset.index;
+      data.projects.splice(i, 1);
+      renderProjects(data.projects);
+    }
+  });
+
+  // Update data ketika input berubah
+  document.getElementById('projectsList').addEventListener('input', (e) => {
+    const i = e.target.dataset.index;
+    if(e.target.classList.contains('project-title')) data.projects[i].title = e.target.value;
+    if(e.target.classList.contains('project-desc')) data.projects[i].desc = e.target.value;
+    if(e.target.classList.contains('project-img')) data.projects[i].img = e.target.value;
+  });
+
+  // Simpan semua data ke localStorage
+  document.getElementById('saveBtn').addEventListener('click', () => {
+    data.profileTitle = document.getElementById('profileTitle').value;
+    data.profileDesc = document.getElementById('profileDesc').value;
+    // profileSocial dihapus dari sini juga
+    data.contactEmail = document.getElementById('contactEmail').value;
+    data.contactWA = document.getElementById('contactWA').value;
+    saveData(data);
+    alert('Data berhasil disimpan!');
+    window.location.href = 'index.html'; // redirect ke index.html setelah simpan
+  });
+</script>
+</body>
+</html>
