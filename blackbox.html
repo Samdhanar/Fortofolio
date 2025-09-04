@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - John Doe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .section-bg {
+            background-color: #f8fafc;
+        }
+        .card-hover {
+            transition: transform 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+        }
+        .about-image {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+        }
+        .about-text {
+            line-height: 1.7;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white">
+    <!-- Header -->
+    <header class="bg-gray-900 text-white shadow-lg fixed top-0 w-full z-10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Dhanar Rizqi</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+                    <li><a href="#skills" class="hover:text-blue-400 transition">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-32 min-h-screen flex items-center">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <img src="assets/image/profil.jpg" alt="Professional headshot of a young man with short dark hair, wearing a suit, smiling confidently in an office setting with city skyline behind" class="mx-auto rounded-full shadow-lg w-32 h-32 object-cover">
+            </div>
+            <h1 class="text-5xl font-bold mb-4">Hi, I'm Dhanar Rizqi</h1>
+            <p class="text-xl mb-6">Web Developer & Designer | Passionate about creating elegant digital experiences</p>
+            <a href="#projects" class="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-bg py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">About Me</h2>
+            <div class="flex flex-wrap items-center justify-center">
+                <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/345b9d2d-1d76-444d-a5a9-5a3bbfc35dc9.png" alt="Side profile of a person working at a desk with laptop, coffee cup, and design sketches, modern home office with plants and bookshelves" class="about-image mx-auto md:mx-0" onerror="this.src='https://placehold.co/500x400?text=Image+Error'" loading="lazy">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <p class="text-lg mb-6 about-text">
+                        Halo! Saya adalah pengembang web yang berdedikasi dengan pengalaman lebih dari 5 tahun dalam menciptakan situs web modern dan elegan. Saya spesialis dalam teknologi front-end seperti HTML, CSS, JavaScript, serta framework seperti React dan Vue.js. 
+                    </p>
+                    <p class="text-lg about-text">
+                        Ketika tidak sedang coding, Anda bisa menemukan saya mengeksplorasi tren desain terkini, mendaki gunung, atau bereksperimen dengan fotografi. Mari kita ciptakan sesuatu yang luar biasa bersama!
+                    </p>
+                    <div class="mt-6 text-center md:text-left">
+                        <a href="#skills" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition">Lihat Keterampilan Saya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <i class="fab fa-html5 text-6xl text-orange-500 mb-4"></i>
+                    <p class="text-lg font-semibold">HTML5</p>
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-css3-alt text-6xl text-blue-500 mb-4"></i>
+                    <p class="text-lg font-semibold">CSS3</p>
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-js-square text-6xl text-yellow-500 mb-4"></i>
+                    <p class="text-lg font-semibold">JavaScript</p>
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-react text-6xl text-blue-400 mb-4"></i>
+                    <p class="text-lg font-semibold">React</p>
+                </div>
+            </div>
+            <div class="mt-12">
+                <div class="mb-4">
+                    <span class="block text-sm font-medium mb-2">Problem Solving</span>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <span class="block text-sm font-medium mb-2">UI/UX Design</span>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <span class="block text-sm font-medium mb-2">Collaboration</span>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 95%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-bg py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/11e0d514-7f45-4892-b4c8-cabb33af04c7.png" alt="Modern e-commerce website homepage with product grid, search bar, and navigation menu displaying various gadgets like laptops and phones" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-600">A fully responsive online store built with React and Node.js.</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 mt-4 inline-block">View Demo</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d38cdea7-6822-4601-94b6-41cbdf2a1fe2.png" alt="Minimalist portfolio website showcasing web development projects with clean typography, image galleries, and contact form" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+                        <p class="text-gray-600">Personal portfolio site using HTML, CSS, and JavaScript with modern animations.</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 mt-4 inline-block">View Demo</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/658e3e84-a5a0-49cc-ad5b-645b1e4ad50c.png" alt="Dashboard interface for a project management app with charts, task lists, and team collaboration features" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Task Manager App</h3>
+                        <p class="text-gray-600">A productivity app built with Vue.js and Firebase for real-time updates.</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 mt-4 inline-block">View Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Get In Touch</h2>
+            <form class="max-w-md mx-auto">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2" for="name">Name</label>
+                    <input class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" id="name" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2" for="email">Email</label>
+                    <input class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="email" id="email" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2" for="message">Message</label>
+                    <textarea class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="5" id="message" required></textarea>
+                </div>
+                <button class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-700 transition" type="submit">Send Message</button>
+            </form>
+            <div class="text-center mt-8">
+                <p class="text-gray-600">Or find me on social media:</p>
+                <div class="flex justify-center space-x-6 mt-4">
+                    <a href="#" class="text-blue-500 text-2xl hover:text-blue-700"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-blue-500 text-2xl hover:text-blue-700"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-blue-500 text-2xl hover:text-blue-700"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 John Doe. All rights reserved.</p>
+            <p class="mt-2">Made with passion and Tailwind CSS</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple alert for form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // CSS animation class
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-fade-in {
+                animation: fadeIn 1s ease-in-out;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
